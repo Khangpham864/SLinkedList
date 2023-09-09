@@ -40,10 +40,9 @@ public:
 };
 //! hàm hủy
 SLinkedList::~SLinkedList() {
-    for (int i = 0; i < size(); i++) {
-        deleteNode(i);
+    while (head != NULL) {
+        deleteNode(0); 
     }
-    free(head);
 }
 
 //! thêm node vào đầu danh sách
@@ -171,6 +170,7 @@ int main() {
     list.addHead(30);
     list.addHead(40);
     list.addHead(50);
+    list.addHead(60);
 
     //* In danh sách
     list.printNode();
